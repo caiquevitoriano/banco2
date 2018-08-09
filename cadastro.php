@@ -18,44 +18,42 @@
 
 						<h2> Cadastro </h2>	
 
-						<form action="#" class="mdl-shadow--4dp centalizaForm">
+						<form method="POST" action="verificarCadastro.php" class="mdl-shadow--4dp centalizaForm">
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="E-mail">
+						    <input class="mdl-textfield__input" type="text" id="login" name="login">
 						    <label class="mdl-textfield__label" for="sample3">E-mail:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="Nome">
+						    <input class="mdl-textfield__input" type="text" id="nome" name="nome">
 						    <label class="mdl-textfield__label" for="sample3">Nome:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="Curso">
+						    <input class="mdl-textfield__input" type="text" id="curso" name="curso">
 						    <label class="mdl-textfield__label" for="sample3">Curso:</label>
 						  </div>
 
 						   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="Instituição">
+						    <input class="mdl-textfield__input" type="text" id="instituicao" name="instituicao" >
 						    <label class="mdl-textfield__label" for="sample3">Instituição:</label>
 						  </div>
 						  
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="Password" id="Senha">
+						    <input class="mdl-textfield__input" type="Password" id="senha" name="senha" >
 						    <label class="mdl-textfield__label" for="sample3">Senha:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="Password" id="RepetirSenha">
+						    <input class="mdl-textfield__input" type="Password" id="repetirSenha" name="repetirSenha">
 						    <label class="mdl-textfield__label" for="sample3">Repetir senha:</label>
 						  </div>
 						  <br>
-						  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Entrar</button>
+                          <input type="submit" value="Cadastrar" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>
+						  
 
 						</form>	
 			</div>
-
-				
-		
 
 			<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--hide-phone"></div>
 

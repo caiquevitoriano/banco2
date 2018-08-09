@@ -7,7 +7,7 @@
 	<script src="./material.min.js"></script>	
 
 	<link rel="stylesheet" href="./map.css">
-    <script src="./map.js"></script>	
+    	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
@@ -22,16 +22,21 @@
 		      <div class="mdl-layout-spacer"></div>
 		      <!-- Navigation. We hide it in small screens. -->
 		      <nav class="mdl-navigation mdl-layout--large-screen-only">
-		        <a class="mdl-navigation__link" href="">Criar Evento</a>
-		        <a class="mdl-navigation__link" href="">Buscar Evento</a>		        
+		        <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
+		        <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>		        
 		      </nav>
+		      <?php
+			  	session_start();
+			  	echo 'Bem Vindo! '.$_SESSION['login'];
+				echo ' | <a href="login.php?action=logout"> Sair</a>';
+			  ?>
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
-		    <span class="mdl-layout-title">Title</span>
+		    <span class="mdl-layout-title">SisTevento</span>
 		    <nav class="mdl-navigation">
-		      <a class="mdl-navigation__link" href="">Criar Evento</a>
-		      <a class="mdl-navigation__link" href="">Buscar Evento</a>
+		      <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
+		      <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>
 		     </nav>
 		  </div>
 
@@ -73,19 +78,56 @@
 
 		  		<div class="mdl-cell mdl-cell--8-col mdl-cell--5-col-tablet ">
 
-		  				 <h2> Local </h2>
-		  			
-		  				 <div id="mapaa"></div>
-		  				 	
+		  			<h2> Local </h2>
+		  			  <div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
 
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3LOxf-7-7A88kh2FUHeFuC9fukzIq1rc&callback=initMap">
+    </script>
 		  		</div>
 		  	</div>		    
 		  </main>
-
-
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdBhNDYQ-UDntS2JgtNxQckwIUTzFLQ2A&callback=initMap">
-    </script>
+		 
 </body>
 </html>

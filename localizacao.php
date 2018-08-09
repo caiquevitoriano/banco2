@@ -26,16 +26,21 @@
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="">Criar Evento</a>
-            <a class="mdl-navigation__link" href="">Buscar Evento</a>           
+            <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
+            <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>           
           </nav>
+          <?php
+            session_start();
+            echo 'Bem Vindo! '.$_SESSION['login'];
+            echo ' | <a href="login.php?action=logout"> Sair</a>';
+          ?>
         </div>
       </header>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">SisTevento</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Criar Evento</a>
-          <a class="mdl-navigation__link" href="">Buscar Evento</a>
+          <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
+          <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>
          </nav>
       </div>
 

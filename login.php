@@ -26,6 +26,7 @@
 							
 							$result = mysqli_query($conexao,'select * from usuario where login ="'.$login.'" and senha="'.$senha.'"');
 							if(mysqli_num_rows($result)==1){
+
 								$_SESSION['login'] = $login;
 								
 								header('Location: criarevento.php');
@@ -34,6 +35,7 @@
 						}
 						if(isset($_GET['logout'])){
 							session_unregister('login');
+							session_destroy();
 						}
 					?>
 

@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="./map.css">
     <script src="./map.js"></script>
     
-
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -44,15 +42,16 @@
          </nav>
       </div>
 
-      <main class="mdl-layout__content">
-        <div class="page-content">
-          
-        </div>
-      </main>
-  </div>
-
-  <div id="mapaa"></div>    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdBhNDYQ-UDntS2JgtNxQckwIUTzFLQ2A&callback=initMap">
+       <div class="page-content">
+           
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3LOxf-7-7A88kh2FUHeFuC9fukzIq1rc&callback=initMap">
     </script>
+        </div>
+
+  </div>
+  <div id="map" height="460px" width="100%"></div>
+  
   </body>
 </html>

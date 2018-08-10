@@ -1,0 +1,20 @@
+SCRIPTS 
+------------------------------------------------------------------------------------->
+Create table usuario (
+ID Int UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+nome varchar(30),
+curso varchar(60),
+instituicao varchar(80),
+login Varchar(50),
+senha Varchar(40),
+Primary Key (ID)) ENGINE = MyISAM;
+---------------------------------------------------------------------------------->
+CREATE TABLE `evento` (
+  `id` INT,
+  `titulo` VARCHAR( 60 ) NOT NULL ,
+  `tema` VARCHAR( 20 ) NOT NULL ,
+  `dataInicio` VARCHAR( 10 ) NOT NULL ,
+  `dataFinal` VARCHAR( 10 ) NOT NULL ,
+  `lat` FLOAT( 10, 6 ) NOT NULL ,
+  `lng` FLOAT( 10, 6 ) NOT NULL 
+) ENGINE = MYISAM ;

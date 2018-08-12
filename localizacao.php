@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Geolocation</title>
-    <link rel="stylesheet" href="./material.css">
-    <script src="./material.min.js"></script>
-    <link rel="stylesheet" href="./map.css">
+    <link rel="stylesheet" href="./css/material.css">
+    <script src="./js/material.min.js"></script>
+    <link rel="stylesheet" href="./css/map.css">
     <script src="./map.js"></script>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -27,11 +29,7 @@
             <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
             <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>           
           </nav>
-          <?php
-            session_start();
-            echo 'Bem Vindo! '.$_SESSION['login'];
-            echo ' | <a href="login.php?action=logout"> Sair</a>';
-          ?>
+         
         </div>
       </header>
       <div class="mdl-layout__drawer">

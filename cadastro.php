@@ -3,8 +3,8 @@
 <head>
 	<title>Cadastro</title>
 
-	<link rel="stylesheet" href="./material.css">
-	<script src="./material.min.js"></script>
+	<link rel="stylesheet" href="./css/material.css">
+	<script src="./js/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -20,32 +20,32 @@
 
 						<form method="POST" action="verificarCadastro.php" class="mdl-shadow--4dp centalizaForm">
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="login" name="login">
+						    <input class="mdl-textfield__input" type="text" id="login" name="login" required/>
 						    <label class="mdl-textfield__label" for="sample3">E-mail:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="nome" name="nome">
+						    <input class="mdl-textfield__input" type="text" id="nome" name="nome" required/>
 						    <label class="mdl-textfield__label" for="sample3">Nome:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="curso" name="curso">
+						    <input class="mdl-textfield__input" type="text" id="curso" name="curso" required />
 						    <label class="mdl-textfield__label" for="sample3">Curso:</label>
 						  </div>
 
 						   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="text" id="instituicao" name="instituicao" >
+						    <input class="mdl-textfield__input" type="text" id="instituicao" name="instituicao"required />
 						    <label class="mdl-textfield__label" for="sample3">Instituição:</label>
 						  </div>
 						  
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="Password" id="senha" name="senha" >
+						    <input class="mdl-textfield__input" type="Password" id="senha" name="senha" required/>
 						    <label class="mdl-textfield__label" for="sample3">Senha:</label>
 						  </div>
 
 						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						    <input class="mdl-textfield__input" type="Password" id="repetirSenha" name="repetirSenha">
+						    <input class="mdl-textfield__input" type="Password" id="repetirSenha" name="repetirSenha" required/>
 						    <label class="mdl-textfield__label" for="sample3">Repetir senha:</label>
 						  </div>
 						  <br>

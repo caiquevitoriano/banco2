@@ -1,13 +1,26 @@
+<?php 
+	session_start();
+
+	if(!isset($_SESSION['Logado'])){
+		header("Location: login.php");
+		session_destroy();
+	}
+
+	if(isset($_GET['Deslogar'])){
+		session_destroy();
+		header("Location: login.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	
-	<link rel="stylesheet" href="./material.css">	
-	<script src="./material.min.js"></script>	
+	<link rel="stylesheet" href="./css/material.css">	
+	<script src="./css/material.min.js"></script>	
 
-	<link rel="stylesheet" href="./mapCriar.css">
-   	<script type="text/javascript" src="mapCriar.js"></script>
+	<link rel="stylesheet" href="./css/mapCriar.css">
+   	<script type="text/javascript" src="./js/mapCriar.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
@@ -23,14 +36,10 @@
 		      <!-- Navigation. We hide it in small screens. -->
 		      <nav class="mdl-navigation mdl-layout--large-screen-only">
 		        <a class="mdl-navigation__link" href="criarevento.php">Criar Evento</a>
-		        <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>		        
+		        <a class="mdl-navigation__link" href="localizacao.php">Buscar Evento</a>
+		        <a  class="mdl-navigation__link" href="?Deslogar">Sair</a>		        
 		      </nav>
-		      <?php
-			  	session_start();
-			  	echo 'Bem Vindo! '.$_SESSION['login'];
-			  	
-				echo ' | <a href="login.php?action=logout"> Sair</a>';
-			  ?>
+
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
@@ -77,7 +86,7 @@
 							  	</select>							     
 							  </div>
 							    <br>
-								<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Salvar</button>
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='saveData()'>Salvar</button>
 						 
 						</form>	
 		  		</div>
@@ -156,6 +165,7 @@
 				      }
   						/* Script para salvar dados no banco*/
 				      function saveData() {
+				      	var user_id = $user_id;
 				        var titulo = escape(document.getElementById('titulo').value);
 				        var tema = escape(document.getElementById('tema').value);
 				        var dataInicio = escape(document.getElementById('dataInicio').value);
@@ -163,7 +173,7 @@
 				        var latlng = marker.getPosition();
 				        var url = 'criarevento.php?titulo=' + titulo + '&tema=' + tema +
 				                  '&dataInicio=' + dataInicio + 
-				                  '&dataFinal=' + dataFinal +'&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+				                  '&dataFinal=' + dataFinal +'&lat=' + '$user_id' + user_id + latlng.lat() + '&lng=' + latlng.lng();
 
 				        downloadUrl(url, function(data, responseCode) {
 
